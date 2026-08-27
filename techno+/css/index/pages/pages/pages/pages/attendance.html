@@ -1,0 +1,39 @@
+<section id="page-attendance" class="page-view space-y-4">
+  <div class="bg-dark-900 p-4 rounded-xl border border-zinc-800/80 flex flex-col sm:flex-row items-center justify-between gap-3">
+    <div class="flex items-center space-x-3 w-full sm:w-auto">
+      <input type="date" id="attendance-date" class="text-xs bg-zinc-950 border border-zinc-800 rounded-lg px-3 py-1.5 text-zinc-200 focus:outline-none focus:border-emerald-500/60 font-mono">
+      <span class="text-xs text-zinc-400">Espelho de Ponto Eletrônico Diário</span>
+    </div>
+
+    <div class="flex items-center space-x-2">
+      <button onclick="showToast('Relatório de Ponto exportado em formato CSV')" class="px-3 py-1.5 text-xs bg-zinc-800 hover:bg-zinc-700 text-zinc-200 rounded-lg font-medium border border-zinc-700 transition-all">
+        <i class="fa-solid fa-file-csv mr-1.5 text-emerald-400"></i> Exportar CSV
+      </button>
+      <button onclick="openModal('modal-punch')" class="px-3 py-1.5 text-xs bg-emerald-600 hover:bg-emerald-500 text-zinc-950 font-bold rounded-lg transition-all">
+        <i class="fa-solid fa-fingerprint mr-1"></i> Simular Marcação
+      </button>
+    </div>
+  </div>
+
+  <div class="bg-dark-900 rounded-xl border border-zinc-800/80 overflow-hidden">
+    <div class="overflow-x-auto">
+      <table class="w-full text-left text-xs">
+        <thead class="bg-zinc-950/80 border-b border-zinc-800/80 text-zinc-400 font-medium">
+          <tr>
+            <th class="px-4 py-3">Colaborador</th>
+            <th class="px-4 py-3 font-mono">Entrada 1</th>
+            <th class="px-4 py-3 font-mono">Saída Alm.</th>
+            <th class="px-4 py-3 font-mono">Retorno Alm.</th>
+            <th class="px-4 py-3 font-mono">Saída 2</th>
+            <th class="px-4 py-3 font-mono">Horas Trab.</th>
+            <th class="px-4 py-3">Status</th>
+            <th class="px-4 py-3 text-right">Ocorrência</th>
+          </tr>
+        </thead>
+        <tbody id="attendance-table-body" class="divide-y divide-zinc-800/40 text-zinc-300">
+          <!-- JS Populated -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

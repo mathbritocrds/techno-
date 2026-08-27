@@ -1,0 +1,52 @@
+<section id="page-payroll" class="page-view space-y-6">
+  <div class="flex items-center justify-between border-b border-zinc-800/80 pb-4">
+    <div>
+      <h3 class="text-sm font-bold text-zinc-100 uppercase tracking-wide">Folha Mensal & Proventos</h3>
+      <p class="text-xs text-zinc-400">Simulação de proventos, descontos de INSS/IRRF e folha consolidada</p>
+    </div>
+    <button onclick="showToast('Folha fechada e enviada para o banco!')" class="px-3.5 py-1.5 text-xs bg-emerald-600 hover:bg-emerald-500 text-zinc-950 font-bold rounded-lg transition-all green-glow-sm">
+      <i class="fa-solid fa-check-double mr-1.5"></i> Fechar Folha
+    </button>
+  </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+    <div class="bg-dark-900 p-4 rounded-xl border border-zinc-800">
+      <p class="text-xs text-zinc-400">Total Bruto</p>
+      <h4 class="text-xl font-bold font-mono text-zinc-100 mt-1">R$ 218.400,00</h4>
+      <span class="text-[10px] text-emerald-400">Base sem adicionais</span>
+    </div>
+
+    <div class="bg-dark-900 p-4 rounded-xl border border-zinc-800">
+      <p class="text-xs text-zinc-400">Encargos Estimados (FGTS/INSS)</p>
+      <h4 class="text-xl font-bold font-mono text-amber-400 mt-1">R$ 56.784,00</h4>
+      <span class="text-[10px] text-amber-500/80">Projeção patronal</span>
+    </div>
+
+    <div class="bg-dark-900 p-4 rounded-xl border border-zinc-800">
+      <p class="text-xs text-zinc-400">Total Líquido do Mês</p>
+      <h4 class="text-xl font-bold font-mono text-emerald-400 mt-1">R$ 161.616,00</h4>
+      <span class="text-[10px] text-zinc-500">Pronto para bancarização</span>
+    </div>
+  </div>
+
+  <div class="bg-dark-900 rounded-xl border border-zinc-800/80 overflow-hidden">
+    <div class="overflow-x-auto">
+      <table class="w-full text-left text-xs">
+        <thead class="bg-zinc-950/80 border-b border-zinc-800/80 text-zinc-400 font-medium">
+          <tr>
+            <th class="px-4 py-3">Colaborador</th>
+            <th class="px-4 py-3">Cargo</th>
+            <th class="px-4 py-3 font-mono">Salário Base</th>
+            <th class="px-4 py-3 font-mono">Proventos Ext.</th>
+            <th class="px-4 py-3 font-mono">Descontos Est.</th>
+            <th class="px-4 py-3 font-mono">Líquido</th>
+            <th class="px-4 py-3 text-right">Status</th>
+          </tr>
+        </thead>
+        <tbody id="payroll-table-body" class="divide-y divide-zinc-800/40 text-zinc-300">
+          <!-- JS Populated -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
