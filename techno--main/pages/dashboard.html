@@ -1,0 +1,108 @@
+<section id="page-dashboard" class="page-view space-y-6">
+  <!-- Metric Cards Grid -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+    <div class="bg-dark-900 p-4 rounded-xl border border-zinc-800/80 hover:border-emerald-500/40 transition-all green-glow-sm">
+      <div class="flex items-center justify-between">
+        <p class="text-xs font-medium text-zinc-400">Total de Colaboradores</p>
+        <div class="w-8 h-8 rounded-lg bg-emerald-950/80 border border-emerald-800/60 text-emerald-400 flex items-center justify-center">
+          <i class="fa-solid fa-users text-sm"></i>
+        </div>
+      </div>
+      <h3 class="text-2xl font-bold text-zinc-100 mt-2 font-mono" id="dash-total-emp">48</h3>
+      <div class="mt-2 flex items-center text-[11px] text-emerald-400">
+        <i class="fa-solid fa-circle-check mr-1.5 text-[10px]"></i>
+        <span>100% Cadastrados ativamente</span>
+      </div>
+    </div>
+
+    <div class="bg-dark-900 p-4 rounded-xl border border-zinc-800/80 hover:border-emerald-500/40 transition-all">
+      <div class="flex items-center justify-between">
+        <p class="text-xs font-medium text-zinc-400">Presença Hoje</p>
+        <div class="w-8 h-8 rounded-lg bg-emerald-950/80 border border-emerald-800/60 text-emerald-400 flex items-center justify-center">
+          <i class="fa-solid fa-user-check text-sm"></i>
+        </div>
+      </div>
+      <h3 class="text-2xl font-bold text-zinc-100 mt-2 font-mono" id="dash-presence-pct">95.8%</h3>
+      <p class="text-[11px] text-zinc-500 mt-2">46 de 48 apresentaram registro</p>
+    </div>
+
+    <div class="bg-dark-900 p-4 rounded-xl border border-zinc-800/80 hover:border-emerald-500/40 transition-all">
+      <div class="flex items-center justify-between">
+        <p class="text-xs font-medium text-zinc-400">Atrasos / Ocorrências</p>
+        <div class="w-8 h-8 rounded-lg bg-amber-950/50 border border-amber-800/50 text-amber-400 flex items-center justify-center">
+          <i class="fa-solid fa-triangle-exclamation text-sm"></i>
+        </div>
+      </div>
+      <h3 class="text-2xl font-bold text-amber-400 mt-2 font-mono">2</h3>
+      <p class="text-[11px] text-amber-500/80 mt-2">1 Atraso tolerado | 1 Falta justificada</p>
+    </div>
+
+    <div class="bg-dark-900 p-4 rounded-xl border border-zinc-800/80 hover:border-emerald-500/40 transition-all">
+      <div class="flex items-center justify-between">
+        <p class="text-xs font-medium text-zinc-400">Folha de Pagamento Estimada</p>
+        <div class="w-8 h-8 rounded-lg bg-zinc-800 text-zinc-300 flex items-center justify-center">
+          <i class="fa-solid fa-vault text-sm"></i>
+        </div>
+      </div>
+      <h3 class="text-2xl font-bold text-zinc-100 mt-2 font-mono">R$ 218.400</h3>
+      <p class="text-[11px] text-zinc-500 mt-2">Média: R$ 4.550 / pessoa</p>
+    </div>
+  </div>
+
+  <!-- Realtime System Sync Widget -->
+  <div class="p-4 rounded-xl bg-emerald-950/20 border border-emerald-500/30 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+    <div class="flex items-center space-x-3">
+      <div class="p-2.5 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-400">
+        <i class="fa-solid fa-arrows-rotate animate-spin" style="animation-duration: 10s;"></i>
+      </div>
+      <div>
+        <h4 class="text-xs font-semibold text-zinc-100">Barramento de Integração de Ponto e Folha</h4>
+        <p class="text-[11px] text-zinc-400">Dispositivos relógio e sistemas ERP sincronizados em tempo real via protocolo REST.</p>
+      </div>
+    </div>
+    <button onclick="navigateTo('integration')" class="px-3 py-1.5 bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 text-xs font-medium rounded-lg border border-emerald-500/40 transition-all whitespace-nowrap">
+      Status dos Connectors &rarr;
+    </button>
+  </div>
+
+  <!-- Dashboard Content Grid -->
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+    <div class="lg:col-span-2 bg-dark-900 rounded-xl border border-zinc-800/80 p-5 space-y-4">
+      <div class="flex items-center justify-between border-b border-zinc-800/60 pb-3">
+        <div>
+          <h3 class="text-xs font-bold text-zinc-200 tracking-wide uppercase">Marcações Recentes do Dia</h3>
+          <p class="text-[11px] text-zinc-500">Últimos batimentos validados biometricamente</p>
+        </div>
+        <button onclick="navigateTo('attendance')" class="text-xs text-emerald-400 hover:text-emerald-300 font-medium">Ver Histórico Completo &rarr;</button>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="w-full text-left text-xs">
+          <thead>
+            <tr class="text-zinc-500 border-b border-zinc-800/60 font-mono text-[11px]">
+              <th class="pb-2">Colaborador</th>
+              <th class="pb-2">Entrada 1</th>
+              <th class="pb-2">Saída Alm.</th>
+              <th class="pb-2">Retorno Alm.</th>
+              <th class="pb-2">Saída 2</th>
+              <th class="pb-2 text-right">Status</th>
+            </tr>
+          </thead>
+          <tbody id="dash-recent-table" class="divide-y divide-zinc-800/40 text-zinc-300">
+            <!-- JS Populated -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="bg-dark-900 rounded-xl border border-zinc-800/80 p-5 space-y-4">
+      <div class="border-b border-zinc-800/60 pb-3">
+        <h3 class="text-xs font-bold text-zinc-200 tracking-wide uppercase">Distribuição por Setor</h3>
+        <p class="text-[11px] text-zinc-500">Alocação de pessoal por departamento</p>
+      </div>
+      <div class="space-y-3" id="dept-breakdown-list">
+        <!-- JS Populated -->
+      </div>
+    </div>
+  </div>
+</section>
