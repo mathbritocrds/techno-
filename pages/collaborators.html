@@ -1,0 +1,44 @@
+<section id="page-collaborators" class="page-view space-y-4">
+  <div class="bg-dark-900 p-4 rounded-xl border border-zinc-800/80 flex flex-col sm:flex-row items-center justify-between gap-3">
+    <div class="relative w-full sm:w-80">
+      <i class="fa-solid fa-magnifying-glass absolute left-3 top-2.5 text-zinc-500 text-xs"></i>
+      <input type="text" id="search-emp" onkeyup="filterEmployees()" placeholder="Buscar por nome, ID ou cargo..." class="w-full pl-9 pr-3 py-1.5 text-xs bg-zinc-950 border border-zinc-800 rounded-lg text-zinc-200 focus:outline-none focus:border-emerald-500/60 focus:ring-1 focus:ring-emerald-500/20">
+    </div>
+
+    <div class="flex items-center space-x-2 w-full sm:w-auto">
+      <select id="filter-dept" onchange="filterEmployees()" class="text-xs bg-zinc-950 border border-zinc-800 rounded-lg px-3 py-1.5 text-zinc-300 focus:outline-none focus:border-emerald-500/60">
+        <option value="">Todos os Setores</option>
+        <option value="Tecnologia">Tecnologia</option>
+        <option value="Recursos Humanos">Recursos Humanos</option>
+        <option value="Financeiro">Financeiro</option>
+        <option value="Vendas">Vendas</option>
+        <option value="Operações">Operações</option>
+      </select>
+
+      <button onclick="openModal('modal-add-employee')" class="bg-emerald-600 hover:bg-emerald-500 text-zinc-950 text-xs font-bold px-3 py-1.5 rounded-lg transition-all whitespace-nowrap">
+        <i class="fa-solid fa-plus mr-1"></i> Cadastrar
+      </button>
+    </div>
+  </div>
+
+  <div class="bg-dark-900 rounded-xl border border-zinc-800/80 overflow-hidden">
+    <div class="overflow-x-auto">
+      <table class="w-full text-left text-xs">
+        <thead class="bg-zinc-950/80 border-b border-zinc-800/80 text-zinc-400 font-medium">
+          <tr>
+            <th class="px-4 py-3">Colaborador</th>
+            <th class="px-4 py-3">Cargo / Função</th>
+            <th class="px-4 py-3">Setor</th>
+            <th class="px-4 py-3">Salário Base</th>
+            <th class="px-4 py-3">Jornada</th>
+            <th class="px-4 py-3">Situação</th>
+            <th class="px-4 py-3 text-right">Ações</th>
+          </tr>
+        </thead>
+        <tbody id="employee-table-body" class="divide-y divide-zinc-800/40 text-zinc-300">
+          <!-- JS Populated -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
